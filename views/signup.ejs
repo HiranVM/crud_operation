@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style1.css">
+</head>
+<body>
+  <div class="login" >
+    <div class="login-screen">
+      <div class="app-title">
+        <h1>Sign UP</h1>
+      </div>
+<div class="login-form">
+  <% if(locals.error){%>
+    <div id="error" class="alter alert-danger text-center">
+        <%= error %>
+    </div>
+<% } %>
+  <form action="/signup" method="POST">
+       <div class="control-group">
+           <label for="name">Name:</label>
+           <input type="text" id="name" name="name" >
+       </div>
+       <div class="control-group">
+           <label for="email">Email:</label>
+           <input type="email" id="email" name="email" >
+      </div>
+      <div class="control-group">
+           <label for="password">Password:</label>
+           <input type="password" id="password" name="password" >
+      </div>
+           <button type="submit" class="btn btn-primary">Sign Up</button>
+  </form>
+        <p class="message">Already has account?<a class="login-link" href="./login">Login</a> </p>
+        
+      </div>
+    </div>
+  </div>
+  <script>
+        setTimeout(() => {
+            document.getElementById("error").style.display="none"
+            
+        },3000);
+  </script>
+</body>
+</html>
